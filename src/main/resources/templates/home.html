@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokemon Research IV Checker</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Welcome to the Pokemon Research Reward IV Checker!</h1>
+        <h2>Enter the Pokemon's details below</h2>
+        <form
+                action="result"
+                method="get">
+            <div>
+                <p>
+                    <label for="name">Enter the Name</label>
+                    <input id="name" type="text" name="name"/>
+                </p>
+
+                <p>
+                    <label for="CP">Enter the CP</label>
+                    <input id="CP" type="number" name="CP"/>
+                </p>
+
+                <p>
+                    <input id="submit" type="submit" value="Submit"/>
+                </p>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
