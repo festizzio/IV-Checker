@@ -6,6 +6,6 @@ import java.sql.Connection;
 import java.util.Map;
 
 public interface PokemonDao {
-    Map<String, Pokemon> getPokemon();
+    Pokemon getPokemon(String pokemonName);
 
 }
