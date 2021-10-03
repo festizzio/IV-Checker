@@ -20,7 +20,11 @@ public class PokemonController {
     @GetMapping("result")
     public String getIVs(@RequestParam int CP, @RequestParam String name, Model model) {
         pokemonService.calculateIv(CP, name);
-        model.addAttribute("IVs", pokemonService.getIVValues());
+        if(pokemonService.getIVValues() == null) {
+            model.addAttribute("IVs", "Could not find IVs for that Pokemon name and/or CP value");
+        } else {
+            model.addAttribute("IVs", pokemonService.getIVValues());
+        }
         return "/result";
     }
 

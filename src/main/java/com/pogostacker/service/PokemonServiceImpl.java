@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Service
 public class PokemonServiceImpl implements PokemonService {
@@ -32,7 +33,9 @@ public class PokemonServiceImpl implements PokemonService {
     @Override
     public void calculateIv(int CP, String pokemonToCheck) {
         newPokemon = pokemonDao.getPokemon(pokemonToCheck);
-        newPokemon.calculateIvPercentagePerCP(CP);
+        if(newPokemon != null) {
+            newPokemon.calculateIvPercentagePerCP(CP);
+        }
     }
 
     public String getIVValues() {
